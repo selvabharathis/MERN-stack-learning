@@ -9,6 +9,6 @@ const {getUserById} = require("../controllers/user")
 router.param("userId",getUserById)
 router.param("productId",getProductById)
 //actual routes
-router.post("/product/create/:userId",isAdmin,isAuthenticated,isSignedIn,createProduct)
+router.post("/product/create/:userId",isSignedIn,isAuthenticated,isAdmin,createProduct)
 
 module.exports = router

@@ -166,7 +166,7 @@ exports.updateStock = (req,res) => {
     })
 }
 
-exports.getAllUniqueCategories = (res,res) => {
+exports.getAllUniqueCategories = (req,res) => {
     Proudct.distinct("category",{},(err,category)=>{
         if(err){
             return res.status(400).json({

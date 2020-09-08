@@ -7,3 +7,7 @@ M - mongo db<br>
 E - express js<br>
 R - react js<br>
 N - node js
+
+Master is done with paypal gateway
+
+MERN-stack-learning-with_stripe is done with stripe payment gateway

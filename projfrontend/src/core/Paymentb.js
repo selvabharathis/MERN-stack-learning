@@ -47,8 +47,18 @@ const Paymentb = ({ products, setReload = (f) => f, reload = undefined }) => {
         .then((response) => {
           setInfo({ ...info, success: response.success, loading: false });
           console.log("PAYMENT SUCCESS");
-          //todo empty the cart
-          // force reload
+          const orderData = {
+            products: products,
+            transaction_id: response.transaction.id,
+            amount: response.transaction.amount,
+          };
+          createOrder(userId, token, orderData)
+            .then((res) => console.log(res))
+            .catch((err) => console.log(err));
+          cartEmpty(() => {
+            console.log("did we got a crash");
+          });
+          setReload(!reload);
         })
         .catch((err) => {
           console.log("PAYMENT FAILED");

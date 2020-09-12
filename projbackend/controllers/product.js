@@ -145,7 +145,7 @@ exports.getAllProduct = (req, res) => {
     });
 };
 
-exports.updateStock = (req, res) => {
+exports.updateStock = (req, res, next) => {
   let myOperations = req.body.order.products.map((prod) => {
     return {
       updateOne: {
